@@ -1,0 +1,10 @@
+{
+  "webserver": {
+    "port": "PORT"
+  },
+  "aws": {
+    "dynamodb": {
+      "endpoint": "DYNAMODB_ENDPOINT"
+    }
+  }
+}

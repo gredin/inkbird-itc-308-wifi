@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  dynamodb:
+    image: amazon/dynamodb-local
+    ports:
+      - "8000:8000"
+  worker:
+    build: .
+    command: ["node", "build/worker.js"]
+    environment:
+      - NODE_CONFIG
+      - DYNAMODB_ENDPOINT=http://dynamodb:8000
+  web:
+    build: .
+    environment:
+      - NODE_CONFIG
+      - DYNAMODB_ENDPOINT=http://dynamodb:8000
+      - PORT=3000
+    ports:
+      - "3000:3000"

@@ -1,0 +1,4 @@
+creation_rules:
+  - path_regex:       ^config/.*\.json$
+    kms:              arn:aws:kms:eu-west-3:997500738563:key/3ea6cd60-c47f-4331-98cd-89cf58fa46c4
+    encrypted_suffix: _encrypted
